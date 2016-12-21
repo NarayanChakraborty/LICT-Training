@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<p id="p1"></p>
+<input type="number" id="v1"><br>
+<input type="number" id="v2"><br><br>
+<button type="button" onclick="myfunctionadd();">+</button>
+<button type="button" onclick="myfunctionsub();">-</button>
+<button type="button" onclick="myfunctionmul();">*</button>
+<button type="button" onclick="myfunctiondiv();">/</button>
+<script >
+function myfunctionadd(){
+  var result,x,y;
+  x=document.getElementById('v1').value;
+   y=document.getElementById('v2').value;
+    result=(+x) + parseFloat(y);
+    document.getElementById('p1').innerHTML=result;
+
+}
+function myfunctionsub(){
+  var result,x,y;
+  x=document.getElementById('v1').value;
+   y=document.getElementById('v2').value;
+    result=x-y;
+    document.getElementById('p1').innerHTML=result;
+
+}
+function myfunctionmul(){
+  var result,x,y;
+  x=document.getElementById('v1').value;
+   y=document.getElementById('v2').value;
+    result=x*y;
+    document.getElementById('p1').innerHTML=result;
+
+}
+function myfunctiondiv(){
+  var result,x,y;
+  x=document.getElementById('v1').value;
+   y=document.getElementById('v2').value;
+    result=x/y;
+    document.getElementById('p1').innerHTML=result;
+
+}
+</script>
+</body>
+</html>

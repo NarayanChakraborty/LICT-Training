@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script>
+function validateForm() {
+	//name validation
+    var x = document.forms["myForm"]["fname"].value;
+    var text = document.getElementById("length");
+    if (x == "") {
+        alert("Name must be filled out");
+        return false;
+    }else if(text.value.length <= 20)
+    {
+    	alert("Name must be at least 20 characters");
+        return false;
+    }
+    
+    //email validation
+    var y = document.forms["myForm"]["email"].value;
+    var atpos = y.indexOf("@");
+    var dotpos = y.lastIndexOf(".");
+    if (y == "") {
+        alert("Name must be filled out");
+        return false;
+    }else if (atpos<1 || dotpos<atpos+2 || dotpos+2>=y.length) {
+        alert("Not a valid e-mail address");
+        return false;
+    }
+    
+    //phone validation
+    var z = document.forms["myForm"]["phone"].value;
+    var phn = document.getElementById("phn");
+    if (z == "") {
+        alert("Phone number must be filled out");
+        return false;
+    }else if(phn.value.length == 11)
+    {
+        return true;
+    }else{
+    	alert("Phone number need atleast 11 characters");
+    	return false;
+    }
+    
+    //age validation
+    var age = document.forms["myForm"]["age"].value;
+    age = Number(age);
+    if (age == "") {
+        alert("Age must be filled out");
+        return false;
+    }else if(age > 17 || age < 41)
+    {
+    	return true;
+    	
+    }else{
+    	alert("Age must be in between 18 to 40 ");
+    	return false;
+    }
+    
+}
+</script>
+</head>
+<body>
+
+<form name="myForm" action="demo_form.asp"
+onsubmit="return validateForm()" method="post">
+Name: <input type="text" name="fname" id="length"><br />
+Email: <input type="text" name="email"><br />
+Phone: <input type="tel" name="phone" id="phn" /><br />
+Age: <input type="text" name="age" id="age" /><br />
+<input type="submit" value="Submit">
+</form>
+
+</body>
+</html>
